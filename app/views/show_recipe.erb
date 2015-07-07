@@ -6,4 +6,11 @@
   <% end %>
 </ul>
 
-<a href="/edit_recipe_form?id=<%= @recipe.id %>">Edit</a> | <a href="/delete_recipe?id=<%= @recipe.id %>">Delete</a> | <a href="/all_recipes">Back to all recipes</a>
+<a href="/recipes/<%= @recipe.id %>/edit">Edit</a> | 
+
+<form action="/recipes/<%= @recipe.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete">
+</form>
+
+ | <a href="/recipes">Back to all recipes</a>

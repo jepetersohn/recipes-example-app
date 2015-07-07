@@ -2,10 +2,10 @@
 <ul class="recipes-list">
   <% @recipes.each do |recipe| %>
     <li class="recipe-item">
-      <a href="/show_recipe?id=<%= recipe.id %>"><%= recipe.title %></a>
+      <a href="<%= recipe_path(recipe) %>"><%= recipe.title %></a>
     </li>
   <% end %>
 </ul>
 
-<a href="/new_recipe_form">Add a recipe</a>
+<a href="/recipes/new">Add a recipe</a>
 
