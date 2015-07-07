@@ -25,9 +25,7 @@ end
 
 # CREATE
 post "/recipes" do
-  @recipe = Recipe.new(title: params[:title],
-                          ingredients: params[:ingredients],
-                          description: params[:description])
+  @recipe = Recipe.new(params[:recipe])
   if @recipe.save
     redirect recipe_path(@recipe)
   else
@@ -51,9 +49,7 @@ end
 # UPDATE
 put "/recipes/:id" do
   @recipe = Recipe.find(params[:id])
-  @recipe.update(title: params[:title],
-                 ingredients: params[:ingredients],
-                 description: params[:description])
+  @recipe.update(params[:recipe])
   redirect recipe_path(@recipe)
 end
 
