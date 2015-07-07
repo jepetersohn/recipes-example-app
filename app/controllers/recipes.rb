@@ -29,7 +29,7 @@ post "/recipes" do
                           ingredients: params[:ingredients],
                           description: params[:description])
   if @recipe.save
-    redirect "/recipes/#{@recipe.id}"
+    redirect recipe_path(@recipe)
   else
     erb :new_recipe_form
   end
@@ -61,5 +61,5 @@ end
 delete "/recipes/:id" do
   recipe = Recipe.find(params[:id])
   recipe.destroy
-  redirect "/recipes"
+  redirect recipes_path
 end

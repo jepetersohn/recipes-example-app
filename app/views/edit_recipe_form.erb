@@ -1,5 +1,5 @@
 <h1>Edit "<%= @recipe.title%>"</h1>
-<form action="/recipes/<%= @recipe.id %>" method="post">
+<form action="<%= recipe_path(@recipe) %>" method="post">
   <input type="hidden" name="_method" value="put">
   <div class="form-field">
     <label for="title">Title:</label>
