@@ -14,13 +14,13 @@
 # INDEX
 get "/recipes" do
   @recipes = Recipe.order(:id).all
-  erb :all_recipes
+  erb :"recipes/index"
 end
 
 # NEW
 get "/recipes/new" do
   @recipe = Recipe.new
-  erb :new_recipe_form
+  erb :"recipes/new"
 end
 
 # CREATE
@@ -31,7 +31,7 @@ post "/recipes" do
   if @recipe.save
     redirect recipe_path(@recipe)
   else
-    erb :new_recipe_form
+    erb :"recipes/new"
   end
 
 end
@@ -39,13 +39,13 @@ end
 # SHOW
 get "/recipes/:id" do
   @recipe = Recipe.find(params[:id])
-  erb :show_recipe
+  erb :"recipes/show"
 end
 
 # EDIT
 get "/recipes/:id/edit" do
   @recipe = Recipe.find(params[:id])
-  erb :edit_recipe_form
+  erb :"recipes/edit"
 end
 
 # UPDATE
