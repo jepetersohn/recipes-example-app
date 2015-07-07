@@ -1,17 +1,8 @@
 <h1>Add a new recipe</h1>
 <form action="<%= recipes_path %>" method="post">
-  <div class="form-field">
-    <label for="title">Title:</label>
-    <input type="text" name="title" value="<%= @recipe.title %>" />
-  </div>
-  <div class="form-field">
-    <label for="description">Description:</label>
-    <textarea name="description"><%= @recipe.description %></textarea>
-  </div>
-  <div class="form-field">
-    <label for="ingredients">Ingredients:</label>
-    <textarea name="ingredients"><%= @recipe.ingredients %></textarea>
-  </div>
+
+  <%= erb :"recipes/_form_fields" %>
+
   <div class="form-buttons">
     <input type="submit" value="Create recipe!" />
   </div>
