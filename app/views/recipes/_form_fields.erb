@@ -10,3 +10,8 @@
   <label for="recipe[ingredients]">Ingredients:</label>
   <textarea name="recipe[ingredients]"><%= @recipe.ingredients %></textarea>
 </div>
+
+<div class="form-field">
+  <label for="recipe[tag_names]">Tags:</label>
+  <input type="text" name="recipe[tag_names]" value="<%= @recipe.tag_names %>" />
+</div>
