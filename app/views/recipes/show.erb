@@ -6,6 +6,12 @@
   <% end %>
 </ul>
 
+<p>
+  <% @recipe.tags.each do |tag| %>
+    <a href="/tags/<%= tag.id %>"><%= tag.name %></a>
+  <% end %>
+</p>
+
 <a href="<%= edit_recipe_path(@recipe) %>">Edit</a> | 
 
 <form action="<%= recipe_path(@recipe) %>" method="post">
