@@ -8,7 +8,7 @@
 
 <p>
   <% @recipe.tags.each do |tag| %>
-    <a href="/tags/<%= tag.id %>"><%= tag.name %></a>
+    <a href="/tags/<%= tag.to_param %>"><%= tag.name %></a>
   <% end %>
 </p>
 
