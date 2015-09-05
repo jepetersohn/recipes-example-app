@@ -25,4 +25,9 @@ helpers do
   def new_user_path
     "/users/new"
   end
+
+  # Login routes
+  def login_path
+    "/login"
+  end
 end
