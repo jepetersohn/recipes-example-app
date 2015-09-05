@@ -20,7 +20,11 @@
 <body>
   <div class="container">
     <header>
+      <% if current_user %>
+        Welcome, <%= current_user.email %>!
+      <% else %>
         <a href="<%= new_user_path %>">Register</a> | <a href="<%= login_path %>">Login</a>
+      <% end %>
     </header>
     <%= yield %>
   </div>
