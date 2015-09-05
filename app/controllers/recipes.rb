@@ -55,7 +55,7 @@ end
 
 # DELETE
 delete "/recipes/:id" do
-  recipe = Recipe.find(params[:id])
+  recipe = current_user.recipes.find(params[:id])
   recipe.destroy
   redirect recipes_path
 end

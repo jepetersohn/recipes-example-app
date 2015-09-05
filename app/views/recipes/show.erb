@@ -8,11 +8,11 @@
 </ul>
 
 <% if @recipe.chef == current_user %>
-  <a href="<%= edit_recipe_path(@recipe) %>">Edit</a> | 
-<% end %>
+  <a href="<%= edit_recipe_path(@recipe) %>">Edit</a> |
 <form action="<%= recipe_path(@recipe) %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete">
 </form>
-
- | <a href="<%= recipes_path %>">Back to all recipes</a>
+ |
+<% end %>
+<a href="<%= recipes_path %>">Back to all recipes</a>
