@@ -42,13 +42,13 @@ end
 
 # EDIT
 get "/recipes/:id/edit" do
-  @recipe = Recipe.find(params[:id])
+  @recipe = current_user.recipes.find(params[:id])
   erb :"recipes/edit"
 end
 
 # UPDATE
 put "/recipes/:id" do
-  @recipe = Recipe.find(params[:id])
+  @recipe = current_user.recipes.find(params[:id])
   @recipe.update(params[:recipe])
   redirect recipe_path(@recipe)
 end

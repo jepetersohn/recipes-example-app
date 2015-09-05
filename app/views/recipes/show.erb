@@ -7,8 +7,9 @@
   <% end %>
 </ul>
 
-<a href="<%= edit_recipe_path(@recipe) %>">Edit</a> | 
-
+<% if @recipe.chef == current_user %>
+  <a href="<%= edit_recipe_path(@recipe) %>">Edit</a> | 
+<% end %>
 <form action="<%= recipe_path(@recipe) %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete">
