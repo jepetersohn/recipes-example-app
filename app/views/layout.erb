@@ -21,7 +21,7 @@
   <div class="container">
     <header>
       <% if current_user %>
-        Welcome, <%= current_user.email %>!
+        Welcome, <%= current_user.email %>! <a href="<%= logout_path %>">Logout</a>
       <% else %>
         <a href="<%= new_user_path %>">Register</a> | <a href="<%= login_path %>">Login</a>
       <% end %>
