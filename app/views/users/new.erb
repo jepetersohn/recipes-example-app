@@ -1,0 +1,19 @@
+<h2>Register a new user</h2>
+
+<form action="/users" method="post">
+  <% @user.errors.full_messages_for(:email).each do |message| %>
+    <p class="error-message"><%= message %></p>
+  <% end %>
+  <label for="email">Email:</label>
+  <input type="text" id="email" name="user[email]">
+  <br>
+
+  <% @user.errors.full_messages_for(:password).each do |message| %>
+    <p class="error-message"><%= message %></p>
+  <% end %>
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="user[password]">
+  <br>
+
+  <input type="submit" value="Register!">
+</form>

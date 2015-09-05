@@ -18,4 +18,8 @@ helpers do
   def edit_recipe_path(recipe)
     "/recipes/#{recipe.id}/edit"
   end
+
+  def new_user_path
+    "/users/new"
+  end
 end
