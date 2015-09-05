@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validate :password_required
 
+  has_many :recipes, foreign_key: "chef_id"
+
   def password
     @password ||= BCrypt::Password.new(self.hashed_password)
   end
