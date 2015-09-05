@@ -19,12 +19,14 @@ end
 
 # NEW
 get "/recipes/new" do
+  login_required!
   @recipe = Recipe.new
   erb :"recipes/new"
 end
 
 # CREATE
 post "/recipes" do
+  login_required!
   @recipe = current_user.recipes.new(params[:recipe])
   if @recipe.save
     redirect recipe_path(@recipe)
@@ -42,12 +44,14 @@ end
 
 # EDIT
 get "/recipes/:id/edit" do
+  login_required!
   @recipe = current_user.recipes.find(params[:id])
   erb :"recipes/edit"
 end
 
 # UPDATE
 put "/recipes/:id" do
+  login_required!
   @recipe = current_user.recipes.find(params[:id])
   @recipe.update(params[:recipe])
   redirect recipe_path(@recipe)
@@ -55,6 +59,7 @@ end
 
 # DELETE
 delete "/recipes/:id" do
+  login_required!
   recipe = current_user.recipes.find(params[:id])
   recipe.destroy
   redirect recipes_path
