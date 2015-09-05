@@ -2,7 +2,7 @@
 <ul class="recipes-list">
   <% @recipes.each do |recipe| %>
     <li class="recipe-item">
-      <a href="<%= recipe_path(recipe) %>"><%= recipe.title %></a>
+      <a href="<%= recipe_path(recipe) %>"><%= recipe.title %></a> by <%= recipe.chef.email %>
     </li>
   <% end %>
 </ul>
