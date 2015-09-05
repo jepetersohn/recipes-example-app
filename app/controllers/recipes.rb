@@ -25,7 +25,7 @@ end
 
 # CREATE
 post "/recipes" do
-  @recipe = Recipe.new(params[:recipe])
+  @recipe = current_user.recipes.new(params[:recipe])
   if @recipe.save
     redirect recipe_path(@recipe)
   else
