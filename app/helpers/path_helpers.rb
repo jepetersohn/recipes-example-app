@@ -1,8 +1,10 @@
 helpers do
+  # Root route
   def root_path
     "/"
   end
 
+  # Recipe routes
   def recipe_path(recipe)
     "/recipes/#{recipe.id}"
   end
@@ -19,6 +21,7 @@ helpers do
     "/recipes/#{recipe.id}/edit"
   end
 
+  # User routes
   def new_user_path
     "/users/new"
   end
