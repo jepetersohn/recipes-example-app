@@ -39,6 +39,16 @@ end
 
 set :app_file, File.join(APP_ROOT, "config.ru")
 
+# this is a custom condition that will allow us to
+# declare that a user must be logged in
+set :login_required do |required|
+  condition do
+    if required && !current_user
+      redirect to(login_path), 302
+    end
+  end
+end
+
 # Set up the controllers and helpers
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
 Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
