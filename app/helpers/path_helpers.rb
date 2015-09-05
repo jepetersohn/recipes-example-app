@@ -1,4 +1,8 @@
 helpers do
+  def root_path
+    "/"
+  end
+
   def recipe_path(recipe)
     "/recipes/#{recipe.id}"
   end
